@@ -1,17 +1,12 @@
 <script>
-  import trim from 'lodash/trim'
-  import concat from 'lodash/concat'
-  import sortBy from 'lodash/sortBy'
+  import { append } from './list'
 
   let textValue = ""
   let items = [ ]
 
 function onClick() {
-  const value = trim(textValue)
-  if (value.length > 0) {
-    items = sortBy(concat(items, {description: value}), ['description'])
-    textValue = ""
-  }
+  items = append(items, textValue)
+  textValue = ""
 }
 </script>
 
